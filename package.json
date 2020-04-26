@@ -1,12 +1,12 @@
 {
-  "name": "ts-weather",
+  "name": "my-ts-weather",
   "version": "1.0.0",
   "description": "Typescript 编写的天气查询CLI",
   "main": "bin/index.js",
   "author": "qumuchegi",
   "license": "MIT",
   "bin": {
-    "ts-weather": "./bin/index.ts"
+    "my-ts-weather": "./bin/index.ts"
   },
   "scripts": {
     "start": "yarn ts-node bin/index.ts"
