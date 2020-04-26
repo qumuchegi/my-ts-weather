@@ -6,7 +6,7 @@
   "author": "qumuchegi",
   "license": "MIT",
   "bin": {
-    "my-ts-weather": "./bin/index.ts"
+    "my-ts-weather": "./bin/index.js"
   },
   "scripts": {
     "start": "yarn ts-node bin/index.ts",
