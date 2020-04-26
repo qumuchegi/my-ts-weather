@@ -11,7 +11,7 @@ TypeScript 学习入门项目之一，可交互的、可以不断响应用户查
 
 ### 支持功能
 
-1. 可以使用 `ts-weather` shell 命令开启查询，而不是用 `yarn start`。这里在bin/index.ts 中使用了`#!/usr/bin/env ts-node`
+1. 可以使用 `ts-weather` shell 命令开启查询，而不是用 `yarn start`。这里在bin/index.ts 中使用了`#!/usr/bin/env node`，需要 tsc 编译 ts 文件为 js，package.json 中 bin 应该执行的是编译后的 js 文件,而不是 ts 文件，否则 ts 文件的模块引入语法将在 cli 宿主机上运行的时候报错
 
 2. 启动后可以一直响应用户输入查询下去。这里使用了连续传递回调函数和递归。
 
