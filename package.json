@@ -9,7 +9,8 @@
     "my-ts-weather": "./bin/index.ts"
   },
   "scripts": {
-    "start": "yarn ts-node bin/index.ts"
+    "start": "yarn ts-node bin/index.ts",
+    "ts-compile": "tsc bin/index.ts"
   },
   "devDependencies": {
     "husky": "^4.2.5",
@@ -17,6 +18,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/colors": "^1.2.1",
     "@types/inquirer": "^6.5.0",
     "@types/node": "^13.13.2",

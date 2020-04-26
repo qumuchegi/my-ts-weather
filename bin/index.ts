@@ -1,9 +1,9 @@
 #!/usr/bin/env ts-node
 
-import inquirer from "inquirer";
-import colors from "colors";
-import axios, { AxiosResponse } from "axios";
-import Table from "cli-table3";
+import inquirer = require("inquirer");
+import colors = require("colors");
+import axios,{AxiosResponse} from "axios";
+import Table = require("cli-table3");
 
 promptLoop()
 
@@ -59,7 +59,7 @@ function queryWeather(city: string, callback:()=>void): void {
     const query:string = `?key=56e472bf225a58cafaae1a00ac4f52b4&city=${encodeURIComponent(city)}&extensions=all&output=JSON`;
     // 高德地图 天气API
     axios.get('https://restapi.amap.com/v3/weather/weatherInfo'+query)
-    .then((res: AxiosResponse<WeatherRes>) => {
+    .then((res: any) => {
       if(res.status===200 && res.data.count === '1') {
         const data = res.data;
         const {city:_city, reporttime, casts} = data.forecasts[0];
