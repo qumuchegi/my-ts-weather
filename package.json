@@ -5,6 +5,7 @@
   "main": "bin/index.js",
   "author": "qumuchegi",
   "license": "MIT",
+  "homepage": "https://github.com/qumuchegi/my-ts-weather",
   "bin": {
     "my-ts-weather": "./bin/index.js"
   },
