@@ -5,6 +5,9 @@ var inquirer = require("inquirer");
 var colors = require("colors");
 var axios_1 = require("axios");
 var Table = require("cli-table3");
+var weatherIcon = require("./weather-icon-map");
+var getIcon = weatherIcon.getIcon;
+console.log('my-ts-weather version 1.0.8');
 promptLoop();
 function promptLoop() {
     inquirer
@@ -24,7 +27,7 @@ function queryWeather(city, callback) {
         console.warn('输入城市查不到，请重新输入');
     }
     else {
-        console.log('正在查询' + city + '天气 ... ...');
+        console.log('正在查询' + city + '的天气 ... ...');
         var query = "?key=56e472bf225a58cafaae1a00ac4f52b4&city=" + encodeURIComponent(city) + "&extensions=all&output=JSON";
         // 高德地图 天气API
         axios_1["default"].get('https://restapi.amap.com/v3/weather/weatherInfo' + query)
@@ -38,17 +41,17 @@ function queryWeather(city, callback) {
                 casts.forEach(function (_a) {
                     var date = _a.date, week = _a.week, dayweather = _a.dayweather, nightweather = _a.nightweather, daytemp = _a.daytemp, nighttemp = _a.nighttemp, daywind = _a.daywind, nightwind = _a.nightwind, daypower = _a.daypower, nightpower = _a.nightpower;
                     table_1.push([
-                        colors.dim(date),
+                        colors.magenta(date),
                         week,
-                        dayweather,
-                        nightweather,
+                        dayweather + (" " + getIcon(dayweather)),
+                        nightweather + (" " + getIcon(nightweather)),
                         daytemp,
                         nighttemp,
                         daywind + " (" + daypower + ")",
                         nightwind + " (" + nightpower + ")"
                     ]);
                 });
-                console.log("\u67E5\u8BE2\u5230 " + colors.green(_city) + " \u7684\u5929\u6C14\u5982\u4E0B\u8868\uFF0C\u67E5\u8BE2\u65F6\u95F4\u662F " + colors.blue(reporttime) + ": ");
+                console.log("\u67E5\u8BE2\u5230 " + colors.green(_city) + " \u7684\u5929\u6C14\u5982\u4E0B\u8868\uFF0C\u67E5\u8BE2\u65F6\u95F4\u662F " + colors.bgWhite.green(reporttime) + ": ");
                 console.log(table_1.toString());
             }
             else if (res.status === 200 && res.data.count === '0') {

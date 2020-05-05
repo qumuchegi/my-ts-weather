@@ -7,7 +7,7 @@ import Table = require("cli-table3");
 import weatherIcon = require("./weather-icon-map");
 const getIcon = weatherIcon.getIcon;
 
-console.log('mt-ts-weather version 1.0.8')
+console.log('my-ts-weather version 1.0.8')
 promptLoop()
 function promptLoop(){
   inquirer
