@@ -1,6 +1,6 @@
 {
   "name": "my-ts-weather",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Typescript 编写的天气查询CLI",
   "main": "bin/index.js",
   "author": "qumuchegi",
