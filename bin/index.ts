@@ -8,7 +8,6 @@ import weatherIcon = require("./weather-icon-map");
 const getIcon = weatherIcon.getIcon;
 
 promptLoop()
-
 function promptLoop(){
   inquirer
   .prompt({
